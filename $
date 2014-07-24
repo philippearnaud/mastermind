@@ -15,57 +15,44 @@ function repartition(expression, id, b) {
                 li.classList.add('red');
                 break;
             case "yellow":
-               var li = document.getElementById(id +b);
+               var li = document.getElementById('li-'+b);
                 li.classList.add('yellow');
                 break;
             case "blue":
-                var li = document.getElementById( id + b);
+                var li = document.getElementById('li-'+b);
                 li.classList.add('blue');
                 break;
             case "orange":
-                var li = document.getElementById(id + b);
+                var li = document.getElementById('li-'+b);
                 li.classList.add('orange');
                 break;
             case "white":
-                var li = document.getElementById(id + b);
+                var li = document.getElementById('li-'+b);
                 li.classList.add('white');
                 break;
             case "violet":
-                var li = document.getElementById(id + b );
+                var li = document.getElementById('li-'+b );
                 li.classList.add('violet');
                 break;
             case "fuchsia":
-                var li = document.getElementById(id + b);
+                var li = document.getElementById('li-'+b);
                 li.classList.add('fuchsia');
                 break;
     }
 }
 
-function impeachment(choice) {
-    for[<0;62;20M
-    //il me faut un algo qui check si la couleur n'a pas déjà été prise.
-    //Il faut checker à chaque nouvelle entrée dans le tableau.
-    //La couleur fait-elle partie du tableau?
-
-}
-
-
 function c_choice() {
     possible_choice = ['green', 'red', 'yellow', 'blue', 'orange', 'white', 'violet', 'fuchsia'];
     var computer_choice = [];
     var choice = null;
-    for(var b = 0; b <= 4; b++) {
+    for(var b = 0; b <= 3; b++) {
         choice = Math.floor((Math.random() * 6-1) + 1);
         computer_choice.push(possible_choice[choice]);
-        repartition(possible_choice[choice], "solution-", b+1);
+        repartition(possible_choice[choice], b);
     }
 }
 
-
-
-
 function nice_try() {
-    c_choice();
     var tableau_try =[];
     var colors = [];
     var color_list = ['green', 'red', 'yellow', 'blue', 'orange', 'white', 'violet', 'fuchsia'];
@@ -75,16 +62,14 @@ function nice_try() {
         // déclencher une erreur.
         // Regarder Boucle closure.
         colors[i].onclick = function(ev) {
-           if(tableau_try.length < 4) {
-                repartition(ev.target.id, "li-", i );
-                tableau_try.push(id);
+            if(tableau_try.length < 4) {
+                repartition(ev.target.id);
+                tableau_try.push(ev.target.id);
                 console.log(tableau_try);
             }
         };
     }
 }
-
-
 
 window.onload = nice_try;
 

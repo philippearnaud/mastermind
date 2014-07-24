@@ -1,0 +1,4 @@
+/* On va faire une fonction main pour afficher notre tableau avec les infos
+        * utiles. */
+
+/* On va faire une foncti   
